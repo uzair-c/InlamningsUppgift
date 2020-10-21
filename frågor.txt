@@ -1,0 +1,43 @@
+Frågor Uzair Chaudhry
+
+Jag siktar på VG.
+
+
+1. När använder man add respektive commit?
+Svar: add lägger till modifierade filer till kö för att bli commitade. Commit är typ att den sparar alla ändringar du gör i filer.
+
+
+2. Vad är pull respektive push?
+Svar: push används för att skicka iväg commit, alltså skicka iväg filer till repository.
+och om man gjort ändringar på filer i repository så kan man använda pull för att hämta den uppdaterad version av filen.
+
+3. När använder man log respektive status?
+Svar: för att se status på dina filer, tex vilka filer är staged, unstaged & untracked.
+
+4. Hur kan man formulera sig i sina commit-meddelanden?
+Svar: man lägger till -m "ditt meddelande här" efter git commit
+
+
+Svar på VG frågan:
+Man kan rulla tillbaka koden i git på flera sätt, tex genom git checkout, git clean, git revert, git reset & git rm.
+Jag tänkte visa jämförelse mellan git revert & git reset.
+
+Git revert:
+Om man använder command "git revert <hash koden>" som vi kan få fram i git log --oneline. så kan man ångra den commiten som hade det hash kod.
+Man bör använda revert om man vill ångra delade offentliga ändringar.
+
+När jag använde revert:
+git revert 2a1dc99
+[main 7e1b11d] Revert "added Guesser.java"
+1 file changed, 103 insertions(+), 106 deletions(-)
+rewrite Guesser.java (60%)
+
+Git checkout:
+Om man använder command "git checkout <hash koden>" så kan vi gå tillbaka till det stadiet vi var på när den hade det hash.
+Genom att använda checkout så blir repository i "detached head" state alltså man arbetar inte på någon branch då, utan man måste
+skapa och lägga till den i ny branch. Man bör använda checkout om man vill flytta runt och granska commit historiken.
+
+När jag använde checkout:
+Observera: checkar ut "be77d43".
+// Lite text om att den ville att jag skulle skapa ny gren (branch). 
+HEAD är nu på be77d43 task 2 completed
